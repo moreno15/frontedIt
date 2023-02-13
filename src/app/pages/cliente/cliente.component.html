@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <label for="">Nombre</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre">
                     </div>
                     <div class="col-lg-5">
                         <label for="">Fecha nacimiento</label>
@@ -42,11 +42,11 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <label for="">Apellido paterno</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" [(ngModel)]="apellido_paterno" name="apellido_paterno">
                     </div>
                     <div class="col-lg-5">
                         <label for="">Dirección</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" [(ngModel)]="direccion" name="direccion">
                     </div>
                     <div class="col-lg-2">
                         <button class="btn btn-info " style="margin-top: 33px">Actualizar</button>
@@ -56,11 +56,11 @@
 
                     <div class="col-lg-5">
                         <label for="">Apellido materno</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" [(ngModel)]="apellido_materno" name="apellido_materno">
                     </div>
                     <div class="col-lg-5">
                         <label for="">Correo</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" [(ngModel)]="correo" name="correo">
                     </div>
                     <div class="col-lg-2">
                         <button class="btn btn-danger " style="margin-top: 33px">Eliminar</button>
@@ -120,7 +120,7 @@
 
 
                         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                        <tr class="row-user" style="cursor: pointer;" mat-row *matRowDef="let row; columns: displayedColumns;" data-toggle="modal" data-target="#modal_user" (click)="getUseriD(row.id_usuario)"></tr>
+                        <tr class="row-user" style="cursor: pointer;" mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getUseriD(row.id)"></tr>
 
                         <!-- Row shown when there is no matching data. -->
                         <tr class="mat-row" *matNoDataRow>

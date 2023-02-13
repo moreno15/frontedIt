@@ -45,33 +45,6 @@ export class ClienteComponent  implements  OnInit,OnDestroy {
 
   id_usuario: any;
 
-  Rol:any=rol;
-  nombre_rol!:string;
-  listaRol!: Array<any>;
-
-  Ubigeo: any = ubigeo;
-  name_dep!: string;
-  name_prov!: string;
-  name_dist!: string;
-
-  departamento!: string;
-  provincia!: string;
-  distrito!: string;
-  domicilio!: string;
-  referencia!: string;
-
-  listaUbigeo!: Array<any>;
-  listarDepartamento!: Array<any>;
-  listarProvincia!: Array<any>;
-  listarDistrito!: Array<any>;
-
-  listarMostrarProvincia!: Array<any>;
-  listarMostrarDistrito!: Array<any>;
-  codi_provin!: string;
-  codi_depart!: string;
-  id_direccion!: number;
-  direccionRequest!: any;
-  perfilRequest!:any;
 
   nombre!:any; apellido_paterno!:any; apellido_materno!:any;fecha_nacimiento!:any;direccion!:any;correo
   constructor(private servicesService:GeneralService,    private activatedRoute: ActivatedRoute, private router: Router) {
@@ -98,8 +71,27 @@ export class ClienteComponent  implements  OnInit,OnDestroy {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  Cliente!:any;
   getUseriD(id:number){
 
+    this.usuarioSubscription = this.servicesService
+      .getCliente(id)
+      .subscribe({
+        next: (v) => {
+          console.log(v[0]);
+          this.Cliente = v[0];
+          this.nombre=v[0]?.nombre;
+          this.apellido_paterno=v[0]?.apellido_paterno;
+          this.apellido_materno=v[0]?.apellido_materno;
+          this.direccion=v[0]?.direccion;
+          this.fecha_nacimiento=v[0]?.fecha_nacimiento;
+          this.correo=v[0]?.correo;
+
+        },
+        error: (e) => console.error(e),
+        complete: () => console.info('complete'),
+      });
   }
 
   ///listar
