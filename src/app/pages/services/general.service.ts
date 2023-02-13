@@ -31,4 +31,10 @@ export class GeneralService {
         `cliente/${idcliente} `
     );
   }
+  eliminarCliente(idcliente: number): Observable<any> {
+    return this.http.delete<any>(
+      this.baseUrl +
+        `cliente/${idcliente} `
+    );
+  }
 }
