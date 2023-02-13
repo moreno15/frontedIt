@@ -21,7 +21,7 @@ export class GeneralService {
   }
   updateCliente(body: any, idcliente: number): Observable<any> {
     return this.http.put(
-      this.baseUrl + `cliente?id=${idcliente}`,
+      this.baseUrl + `cliente/${idcliente}`,
       body
     );
   }

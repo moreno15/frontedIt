@@ -97,17 +97,19 @@ export class ClienteComponent  implements  OnInit,OnDestroy {
 
   guardar(form:NgForm){
     if(form.valid){
-      this.Cliente={
-        nombre:this.nombre,
-        apellido_paterno: this.apellido_paterno,
-        apellido_materno:this.apellido_materno,
-        direccion:this.direccion,
-        fecha_nacimiento:this.fecha_nacimiento,
-        correo:this.correo,
-        sexo:""
 
-      }
       if( this.id_cliente>0){
+        this.Cliente={
+          id:this.id_cliente,
+          nombre:this.nombre,
+          apellido_paterno: this.apellido_paterno,
+          apellido_materno:this.apellido_materno,
+          direccion:this.direccion,
+          fecha_nacimiento:this.fecha_nacimiento,
+          correo:this.correo,
+          sexo:""
+
+        }
         this.usuarioSubscription = this.servicesService
         .updateCliente(this.Cliente,this.id_cliente)
         .subscribe({
@@ -121,6 +123,16 @@ export class ClienteComponent  implements  OnInit,OnDestroy {
           complete: () => console.info('complete'),
         });
       }else{
+        this.Cliente={
+          nombre:this.nombre,
+          apellido_paterno: this.apellido_paterno,
+          apellido_materno:this.apellido_materno,
+          direccion:this.direccion,
+          fecha_nacimiento:this.fecha_nacimiento,
+          correo:this.correo,
+          sexo:""
+
+        }
         this.usuarioSubscription = this.servicesService
         .guardarCliente(this.Cliente)
         .subscribe({
