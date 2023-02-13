@@ -1,0 +1,6 @@
+[
+    { "id": "1", "description": "ESTUDIANTE" },
+    { "id": "2", "description": "INSTRUCTOR" },
+    { "id": "3", "description": "ADMINISTRADOR" },
+    { "id": "4", "description": "PERSONAL" }
+]

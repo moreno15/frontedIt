@@ -1,0 +1,239 @@
+body {
+    background: #f5f5f5;
+}
+
+.wrapper .content-wrapper {
+    min-height: 0px !important;
+}
+
+body .btn-primary {
+    font-family: none;
+    text-transform: none;
+    background: #031f42;
+    border: 1px solid #031f42;
+}
+
+body .btn-success,
+body .btn-danger,
+body .btn-warning,
+body .btn-info,
+body .btn-secondary {
+    font-family: none;
+    text-transform: none;
+}
+
+body .btn-secondary {
+    font-family: none;
+    text-transform: none;
+    margin-top: 0px;
+    background: #031f42;
+    border: 1px solid #031f42;
+    color: #FFFFFF;
+}
+
+body .btn-primary:hover,
+body .btn-secondary:hover,
+body .btn.btn-secondary:hover,
+body .btn.btn-primary:hover {
+    background: #12498f;
+    border: 1px solid #12498f;
+    color: #fff;
+}
+
+
+/*didebar*/
+
+body:not(.sidebar-collapse) .left-siderbar {
+    display: block !important;
+}
+
+body:not(.sidebar-collapse) .right-siderbar {
+    display: none !important;
+}
+
+body .left-siderbar {
+    display: none;
+}
+
+body~.sidebar-collapse .right-siderbar {
+    display: block;
+}
+
+
+/*border de las categorias cursos*/
+
+body .btn {
+    border-radius: 50px;
+}
+
+.note-editor button {
+    border-radius: 0px !important;
+}
+
+body .btn-outline-primary {
+    background: #fff;
+    font-family: none;
+    text-transform: none;
+    color: #031f42;
+    border: 1px solid #031f42;
+}
+
+body .btn-outline-primary span {
+    color: #031f42;
+}
+
+body .btn-outline-primary:hover {
+    color: #fff;
+    background: #12498f;
+    border: 1px solid #12498f;
+}
+
+body .btn-outline-primary:hover span {
+    color: #fff;
+}
+
+.nav-pills .nav-item.show .nav-link,
+.nav-pills .nav-link.active {
+    background: #031f42 !important;
+    color: #fff !important;
+    border-radius: 50px;
+}
+
+.nav-pills .nav-link:hover {
+    color: rgb(240, 130, 231) !important;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #c7c7c7;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 1px solid #c7c7c7;
+    /* creates padding around scroll thumb */
+}
+
+
+/* Works on Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #f5f5f5;
+}
+
+
+/* Works on Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #c7c7c7;
+    border-radius: 20px !important;
+    border: 1px solid #c7c7c7;
+}
+
+
+/*paginacion */
+
+.pagination .pages>li.active>a {
+    border-color: #0da9ef;
+    background-color: #0da9ef;
+    color: #fff;
+}
+
+.pagination li.active>a {
+    border-color: #0da9ef;
+    background-color: #0da9ef;
+    color: #fff;
+}
+
+.pagination .pages>li>a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    transition: all .3s;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    color: #606975;
+    line-height: 34px;
+    text-decoration: none;
+    border-color: none;
+    padding-top: 0px;
+}
+
+.page-item.active a {
+    border: 1px solid #031f42 !important;
+    background: #031f42 !important;
+}
+
+.pagination li>a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    transition: all .3s;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    color: #f5f5f5;
+    line-height: 34px;
+    text-decoration: none;
+    border-color: none;
+}
+
+.page-item.prev .page-link,
+.page-item.first .page-link,
+.page-item.last .page-link,
+.page-item.next .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    cursor: pointer;
+}
+
+body .editor-learning .ck-editor__editable_inline {
+    height: 350px !important;
+    overflow-y: scroll;
+}
+
+body .content-empleo .ck-editor__editable_inline {
+    height: 150px !important;
+    overflow-y: scroll;
+}
+
+body .content-curso .ck-editor__editable_inline {
+    height: 150px !important;
+    overflow-y: scroll;
+}
+
+body .ck-file-dialog-button {
+    display: none !important;
+}
+
+.ck-editor__editable,
+.ck-toolbar {
+    background: #f5f5f5 !important;
+    border: 1px solid #12498f;
+}
+
+input,
+select {
+    background: #f2f7fa !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
