@@ -73,25 +73,73 @@ export class ClienteComponent  implements  OnInit,OnDestroy {
   }
 
   Cliente!:any;
+  id_cliente!:number;
   getUseriD(id:number){
-
+    console.log(id);
     this.usuarioSubscription = this.servicesService
       .getCliente(id)
       .subscribe({
         next: (v) => {
-          console.log(v[0]);
-          this.Cliente = v[0];
-          this.nombre=v[0]?.nombre;
-          this.apellido_paterno=v[0]?.apellido_paterno;
-          this.apellido_materno=v[0]?.apellido_materno;
-          this.direccion=v[0]?.direccion;
-          this.fecha_nacimiento=v[0]?.fecha_nacimiento;
-          this.correo=v[0]?.correo;
+          console.log(v);
+          this.id_cliente=v?.id,
+          this.nombre=v?.nombre;
+          this.apellido_paterno=v?.apellido_paterno;
+          this.apellido_materno=v?.apellido_materno;
+          this.direccion=v?.direccion;
+          this.fecha_nacimiento=v?.fecha_nacimiento;
+          this.correo=v?.correo;
 
         },
         error: (e) => console.error(e),
         complete: () => console.info('complete'),
       });
+  }
+
+  guardar(form:NgForm){
+    if(form.valid){
+      this.Cliente={
+        nombre:this.nombre,
+        apellido_paterno: this.apellido_paterno,
+        apellido_materno:this.apellido_materno,
+        direccion:this.direccion,
+        fecha_nacimiento:this.fecha_nacimiento,
+        correo:this.correo,
+        sexo:""
+
+      }
+      if( this.id_cliente>0){
+        this.usuarioSubscription = this.servicesService
+        .updateCliente(this.Cliente,this.id_cliente)
+        .subscribe({
+          next: (v) => {
+            this.getAllCliente();
+            this.id_cliente=0;
+            swal.fire('Exito!', 'los datos se actualizaron correctamente', 'success');
+
+          },
+          error: (e) => console.error(e),
+          complete: () => console.info('complete'),
+        });
+      }else{
+        this.usuarioSubscription = this.servicesService
+        .guardarCliente(this.Cliente)
+        .subscribe({
+          next: (v) => {
+            this.getAllCliente();
+            this.id_cliente=0;
+            swal.fire('Exito!', 'los datos se guardaron correctamente', 'success');
+
+          },
+          error: (e) => console.error(e),
+          complete: () => console.info('complete'),
+        });
+      }
+
+
+    }
+
+
+
   }
 
   ///listar

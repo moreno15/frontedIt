@@ -28,7 +28,7 @@ export class GeneralService {
   getCliente(idcliente: number): Observable<any> {
     return this.http.get<any>(
       this.baseUrl +
-        `cliente?id=${idcliente} `
+        `cliente/${idcliente} `
     );
   }
 }
