@@ -108,8 +108,9 @@ export class ClienteComponent  implements  OnInit,OnDestroy {
       .listarclientes()
       .subscribe({
         next: (v) => {
+          console.log(v);
 
-          this.listaUsers = v.results;
+          this.listaUsers = v;
         const users =  this.listaUsers ;
         this.dataSource = new MatTableDataSource(users);
         this.dataSource.paginator = this.paginator;
